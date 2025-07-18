@@ -1,4 +1,3 @@
-
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
@@ -25,7 +24,7 @@ if ($code !== 200 || !$response) {
   exit;
 }
 
-if (!preg_match('/window._sharedData = (.*?);<\/script>/s', $response, $m)) {
+if (!preg_match('/window._sharedData = (.*?);<\\/script>/s', $response, $m)) {
   echo json_encode(['error' => 'Profile structure changed.']);
   exit;
 }
